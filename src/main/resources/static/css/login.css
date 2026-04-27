@@ -1,0 +1,246 @@
+:root {
+    /* ==== Paleta del Prototipo ==== */
+    --primary-color: #537b65;       /* Verde Corporativo */
+    --secondary-color: #436452;     /* Verde Oscuro (Hover) */
+    --text-title: #2f4f3e;          /* Color para Títulos */
+    --text-color: #444;             /* Texto general */
+    --bg-overlay: #537b65;
+}
+
+/* ==== Fuentes y Ajustes Generales ==== */
+body {
+    font-family: 'Arial', sans-serif; /* Coincide con el prototipo */
+}
+
+/* Contenedor Principal */
+.container-login-register {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 12px; /* Ajustado a 12px para coincidir con las Cards del prototipo */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra más suave y elegante */
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+/* Formulario de Login */
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+/* Formulario de Registro */
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Animación al activar registro */
+.container-login-register.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.container-login-register.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% { opacity: 0; z-index: 1; }
+    50%, 100% { opacity: 1; z-index: 5; }
+}
+
+/* ==== Overlay (La parte verde que se mueve) ==== */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container-login-register.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: var(--bg-overlay);
+    /* Degradado sutil corporativo */
+    background: -webkit-linear-gradient(to right, #537b65, #436452);
+    background: linear-gradient(to right, #537b65, #436452);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container-login-register.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.container-login-register.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container-login-register.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/* ==== Estilos del Formulario Interno ==== */
+.form-content {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Títulos dentro del form */
+.form-content h2 {
+    color: var(--text-title);
+    font-weight: bold;
+}
+
+/* Inputs */
+.form-control {
+    background-color: #f8f9f7 !important; /* Fondo suave del prototipo */
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    background-color: #fff !important;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(83, 123, 101, 0.25); /* Sombra verde suave */
+}
+
+/* Botones Principales (Ingresar / Registrarse) */
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Botones del Overlay (Blanco borde) */
+.btn-outline-light {
+    border: 2px solid #fff;
+    font-weight: 600;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+/* Scroll y utilitarios */
+.input-group-custom {
+    margin: 8px 0;
+    width: 100%;
+}
+
+.scrollable-form {
+    max-height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.scrollable-form::-webkit-scrollbar { width: 5px; }
+.scrollable-form::-webkit-scrollbar-thumb { background: #ccc; border-radius: 5px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container-login-register {
+        min-height: 800px;
+        height: auto;
+        overflow: visible;
+        box-shadow: none; /* Menos sombra en móvil */
+        background: transparent;
+    }
+    .form-container {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 0;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    .form-content {
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+    .sign-in-container, .sign-up-container {
+        width: 100%;
+        opacity: 1;
+        z-index: 5;
+        transform: none !important;
+        animation: none;
+        display: block;
+    }
+    .sign-up-container {
+        display: none;
+    }
+    .overlay-container {
+        display: none;
+    }
+}
