@@ -1,8 +1,7 @@
-package com.UnidosCorazones.demo.Controller;
+package com.ONG.web.Controller;
 
-import com.UnidosCorazones.demo.Model.Campania;
-import com.UnidosCorazones.demo.Respository.CampaniaRepository;
-import com.UnidosCorazones.demo.Service.CampaniaService;
+import com.ONG.web.Model.Campania;
+import com.ONG.web.Service.CampaniaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,9 @@
-package com.UnidosCorazones.demo.Service;
+package com.ONG.web.Service;
 
-import com.UnidosCorazones.demo.Model.Administrador;
-import com.UnidosCorazones.demo.Model.Campania;
-import com.UnidosCorazones.demo.Respository.AdministradorRepository;
-import com.UnidosCorazones.demo.Respository.CampaniaRepository;
+import com.ONG.web.Model.Administrador;
+import com.ONG.web.Model.Campania;
+import com.ONG.web.Repository.AdministradorRepository;
+import com.ONG.web.Repository.CampaniaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;

@@ -1,6 +1,6 @@
-package com.UnidosCorazones.demo.Respository;
+package com.ONG.web.Repository;
 
-import com.UnidosCorazones.demo.Model.Campania;
+import com.ONG.web.Model.Campania;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

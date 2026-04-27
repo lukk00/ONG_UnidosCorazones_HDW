@@ -1,4 +1,4 @@
-package com.UnidosCorazones.demo.Model;
+package com.ONG.web.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
