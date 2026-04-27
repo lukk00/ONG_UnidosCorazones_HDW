@@ -1,0 +1,99 @@
+
+/* ==== Variables del Prototipo ==== */
+:root {
+    --color-principal: #537b65;
+    --color-principal-oscuro: #436452;
+    --color-texto-titulo: #2f4f3e;
+    --color-texto: #444;
+    --color-fondo-suave: #f8f9f7;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--color-texto);
+    /* El padding-top ya viene del layout.css */
+}
+
+/* ==== Hero Section ==== */
+.hero-section {
+    background-color: var(--color-fondo-suave);
+    padding: 4rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.hero-section h1 {
+    color: var(--color-texto-titulo);
+}
+
+/* ==== Cards de Actividades ==== */
+.activity-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 12px; /* Ajustado al prototipo */
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.activity-card:hover {
+    transform: translateY(-5px); /* Elevación más sutil */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.activity-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.activity-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.activity-card:hover .activity-img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* ==== Badges ==== */
+.badge-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--color-principal);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ==== Textos de la Card ==== */
+.card-title {
+    color: var(--color-texto-titulo);
+}
+
+.text-success {
+    color: var(--color-principal) !important; /* Sobrescribe el verde bootstrap */
+}
+
+/* ==== Botón de Acción (CTA) ==== */
+.btn-cta {
+    background-color: var(--color-principal);
+    color: white;
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-cta:hover {
+    background-color: var(--color-principal-oscuro);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(83, 123, 101, 0.3);
+}
