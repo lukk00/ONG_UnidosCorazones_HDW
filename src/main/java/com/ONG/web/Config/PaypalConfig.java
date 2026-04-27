@@ -1,4 +1,4 @@
-package com.UnidosCorazones.demo.Config; // Asegúrate que el package coincida con lo que creaste
+package com.ONG.web.Config; // Asegúrate que el package coincida con lo que creaste
 
 import com.paypal.core.PayPalEnvironment;
 import com.paypal.core.PayPalHttpClient;

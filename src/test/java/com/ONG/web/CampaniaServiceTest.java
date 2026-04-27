@@ -1,10 +1,10 @@
-package com.UnidosCorazones.demo;
+package com.ONG.web;
 
-import com.UnidosCorazones.demo.Model.Administrador;
-import com.UnidosCorazones.demo.Model.Campania;
-import com.UnidosCorazones.demo.Respository.AdministradorRepository;
-import com.UnidosCorazones.demo.Respository.CampaniaRepository;
-import com.UnidosCorazones.demo.Service.CampaniaService;
+import com.ONG.web.Model.Administrador;
+import com.ONG.web.Model.Campania;
+import com.ONG.web.Repository.AdministradorRepository;
+import com.ONG.web.Repository.CampaniaRepository;
+import com.ONG.web.Service.CampaniaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
