@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.ONG.web.Config;
+=======
+package com.UnidosCorazones.demo.Config;
+>>>>>>> ba0f054 (feat: implementar controladores web y configuracion del sistema)
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +20,10 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+<<<<<<< HEAD
+=======
+        // ¡ADVERTENCIA! Esto es obsoleto y muy inseguro.
+>>>>>>> ba0f054 (feat: implementar controladores web y configuracion del sistema)
         // Esto le dice a Spring que las contraseñas NO están codificadas.
         //return NoOpPasswordEncoder.getInstance();
         return new BCryptPasswordEncoder();
@@ -29,7 +37,11 @@ public class SecurityConfig {
                 .securityMatcher("/admin/**", "/login-admin", "/admin-login-process") // <--- IMPORTANTE: Solo aplica aquí
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/login-admin", "/css/**", "/js/**", "/img/**").permitAll()
+<<<<<<< HEAD
                         .requestMatchers("/admin/**").hasAnyAuthority("ADMINISTRADOR", "ROLE_ADMINISTRADOR")
+=======
+                        .requestMatchers("/admin/**").hasAnyAuthority("ADMINISTRADOR", "ROLE_ADMINISTRADOR") // Ajusta según como guardes el rol en BD
+>>>>>>> ba0f054 (feat: implementar controladores web y configuracion del sistema)
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -59,6 +71,10 @@ public class SecurityConfig {
         http
                 // No ponemos securityMatcher, así que atrapa todo lo demás
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ba0f054 (feat: implementar controladores web y configuracion del sistema)
                 .authorizeHttpRequests(authorize -> authorize
 
                         .requestMatchers("/api/pagos/**").permitAll()
